@@ -1,0 +1,44 @@
+###############################################################
+Lenguajes y Frameworks
+Backend
+Node.js v18+: Entorno de ejecución de JavaScript para backend.
+
+Express.js: Framework web para crear API REST.
+
+JWT (jsonwebtoken): Para autenticación y autorización basada en tokens.
+
+bcrypt: Para hashear contraseñas.
+
+mysql2: Cliente para conectar con base de datos MySQL.
+
+Frontend
+Angular 18: Framework frontend SPA basado en TypeScript.
+
+RxJS: Para programación reactiva (incluido en Angular).
+
+Angular Router: Para manejo de rutas y navegación.
+
+HttpClient: Para comunicación con API REST.
+
+ReactiveFormsModule: Para formularios reactivos y validaciones.
+
+2. Base de Datos
+MySQL 8.x: Sistema gestor de base de datos relacional.
+
+Se creó una base llamada todo_app con dos tablas principales:
+
+users para almacenar usuarios con contraseña hasheada.
+
+tasks para almacenar las tareas asociadas a cada usuario.
+
+###############################################################
+cd backend
+npm install
+cp .env.example .env  # configurar credenciales
+npm run dev           # levantar servidor con nodemon
+
+###############################################################
+cd frontend
+npm install
+ng serve              # levantar frontend Angular
+

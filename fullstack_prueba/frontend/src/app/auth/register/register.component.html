@@ -1,0 +1,33 @@
+<h2>Registro</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label>Nombre</label>
+    <input type="text" formControlName="name" />
+    <div *ngIf="form.controls.name.invalid && form.controls.name.touched">
+      El nombre es obligatorio.
+    </div>
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+    <div *ngIf="form.controls.email.invalid && form.controls.email.touched">
+      Ingresa un email válido.
+    </div>
+  </div>
+
+  <div>
+    <label>Password</label>
+    <input type="password" formControlName="password" />
+    <div *ngIf="form.controls.password.invalid && form.controls.password.touched">
+      La contraseña es obligatoria.
+    </div>
+  </div>
+
+  <div *ngIf="error" style="color:red">{{ error }}</div>
+
+  <button type="submit" [disabled]="form.invalid">Registrarse</button>
+</form>
+
+<p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>

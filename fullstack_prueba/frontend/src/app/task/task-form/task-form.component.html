@@ -1,0 +1,23 @@
+<form (ngSubmit)="submit()">
+  <div>
+    <label>Título</label>
+    <input formControlName="title" />
+    <div *ngIf="form.controls.title.invalid && form.controls.title.touched">
+      Se requiere título.
+    </div>
+  </div>
+  <div>
+    <label>Descripción</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+  <div>
+    <label>Estatus</label>
+    <select formControlName="status">
+      <option value="pendiente">Pendiente</option>
+      <option value="completado">Completado</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="form.invalid">
+    {{ editingTask ? 'Actualizar' : 'Crear' }} tarea
+  </button>
+</form>

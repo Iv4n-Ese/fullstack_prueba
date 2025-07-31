@@ -1,0 +1,20 @@
+<h2>Login</h2>
+<form (ngSubmit)="submit()">
+  <div>
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+    <div *ngIf="form.controls.email.invalid && form.controls.email.touched">
+      Email inválido.
+    </div>
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" formControlName="password" />
+    <div *ngIf="form.controls.password.invalid && form.controls.password.touched">
+      Se requiere password.
+    </div>
+  </div>
+  <div *ngIf="error" style="color:red">{{ error }}</div>
+  <button type="submit" [disabled]="form.invalid">Entrar</button>
+</form>
+<p>¿No tienes cuenta? <a routerLink="/register">Regístrate</a></p>
